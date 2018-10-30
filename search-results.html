@@ -234,20 +234,33 @@
     #generic-tabs li {
         width: 32%;
     }
-    .tna-results, .tna-filters {
+    .tna-results, .tab-content {
         display: none;
     }
+    .tab-content.selected {
+        display: inherit;
+    }
     </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            $('ul.tabs li').click(function(){
+                var tab_id = $(this).attr('data-tab');
+
+                $('ul.tabs li').removeClass('selected');
+                $('.tab-content').removeClass('selected');
+
+                $(this).addClass('selected');
+                $("#"+tab_id).addClass('selected');
+                $("#filter-"+tab_id).addClass('selected');
+            })
+
+        })
+    </script>
 </head>
 <body class="search-results" style="">
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8DSWV"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-
 <header role="banner" id="page-header">
     <div id="skip-link-container">
         <a href="http://discovery.nationalarchives.gov.uk/results/r?_q=william+penn#page_wrap">Skip to Main Content</a>
@@ -374,10 +387,10 @@
     <section class="row row-tabbed-content">
 
             <div class="col starts-at-full clr box generic-tabs">
-                <ul id="generic-tabs">
-                    <li class="selected tab" id="records-tab"><span>All archives 2,246</span></li>
-                    <li class="tab" id="tna-tab"><a href="#">The National Archives 2,246</a></li>
-                    <li class="tab" id="name-authorities-tab"><a href="#" id="nameAuthorities">Record creators 6</a></li>
+                <ul id="generic-tabs" class="tabs">
+                    <li class="selected tab" id="records-tab" data-tab="tab-1"><span>All archives 2,246</span></li>
+                    <li class="tab" id="tna-tab" data-tab="tab-2"><span>The National Archives 2,246</span></li>
+                    <li class="tab" id="name-authorities-tab" data-tab="tab-3"><span>Record creators 6</span></li>
                 </ul>
                 <span class="tab-description records">
                     Descriptions of records and information about how to access them
@@ -389,7 +402,8 @@
     <section class="row row-tabbed-content">
             <div class="col ends-at-one-third clr box" id="search-filters">
                 <h2 class="inline">Filter results</h2>
-                <ul class="available-filters all-archives-filters" role="tablist" aria-multiselectable="true">
+                <div id="filter-tab-1" class="all-archives-filters tab-content selected">
+                    <ul class="available-filters all-archives-filters" role="tablist" aria-multiselectable="true">
                     <li id="heldby">
                         <h3><a href="http://discovery.nationalarchives.gov.uk/results/r?_q=william+penn#"
                                class="filter-toggler expanded" id="held-by-filters" role="tab">Held by</a></h3>
@@ -516,7 +530,9 @@
                         </form>
                     </li>
                 </ul>
-                <ul class="available-filters tna-filters" role="tablist" aria-multiselectable="true">
+                </div>
+                <div id="filter-tab-2" class="tna-filters tab-content">
+                    <ul class="available-filters tna-filters" role="tablist" aria-multiselectable="true">
 
                     <li id="source">
                         <h3><a href="#" class="filter-toggler expanded" id="download-filters" role="tab">Download</a></h3>
@@ -1460,11 +1476,12 @@
                             </div>
                         </form>            </li>
                 </ul>
+                </div>
             </div>
 
         <div class="col ends-at-two-thirds clr box" id="search-results">
             <div class="breather">
-                <div class="all-archives-results">
+                <div id="tab-1" class="all-archives-results tab-content selected">
                     <ul id="search-control-panel">
                     <li>1 - 15 of 2,246 <span class="not-at-smaller">results</span></li>
                     <li id="sort-form">
@@ -2154,7 +2171,7 @@
                     </li>
                 </ul>
                 </div>
-                <div class="tna-results">
+                <div id="tab-2" class="tna-results tab-content">
                     <ul id="search-control-panel">
                     <li>1 - 15 of 1,085 <span class="not-at-smaller">results</span> </li>
                     <li id="sort-form">
@@ -2176,575 +2193,575 @@
                 </li>
                     <li><a id="show-download-form" href="#" class="toggle-export">Export results</a></li></ul>
                     <ul id="search-results">
-                    <li class="tna-result">
-                        <a href="/details/r/C11688804">
+                        <li class="tna-result">
+                            <a href="/details/r/C3950806">
 
-                            <h3><span class="highlight">William</span> <span class="highlight">Penn</span>.</h3>
-                            <p>Air Ministry: Air Member for Personnel and predecessors: Airmen's Records. 68901 - 68983 (Described at item level). <span class="highlight">William</span> <span class="highlight">Penn</span>.</p>
-                            <table>
-                                <tbody><tr>
-                                    <td class="item-desc-label">
-                                        Held by:
-                                    </td>
-                                    <td>
-                                        The National Archives - Air Ministry and Royal Air Force records
-                                    </td>
-                                </tr>
+                                <h3>Short title: <span class="highlight">Penn</span> v Robinson. Plaintiffs: <span class="highlight">William</span> <span class="highlight">Penn</span> and <span class="highlight">William</span> <span class="highlight">Penn</span>. Defendants: <span class="highlight">William</span> Robinson. Subject: ...</h3>
+                                <p>Court of Chancery: Six Clerks Office: Pleadings before 1714, Bridges. Short title: <span class="highlight">Penn</span> v Robinson. Plaintiffs: <span class="highlight">William</span> <span class="highlight">Penn</span> and <span class="highlight">William</span> <span class="highlight">Penn</span>. Defendants: <span class="highlight">William</span> Robinson. Subject: property in Kidderminster, Worcestershire. Document type: Bill only.</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            The National Archives - Chancery, the Wardrobe, Royal Household, Exchequer and various commissions
+                                        </td>
+                                    </tr>
 
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Date:
-                                    </td>
-                                    <td>
-                                <span class="itemContent">
-                                    1918 - 1928
-                                </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Reference:
-                                    </td>
-                                    <td>
-                                        <span class="itemContent">AIR 79/637/68906</span>
-                                    </td>
-                                </tr>
-
-                                <tr><td class="item-desc-label">Subjects:</td><td><span> Air Force |  Armed Forces (General Administration)</span></td></tr>
-                                </tbody></table>
-                        </a>
-                    </li>
-                    <li class="tna-result">
-                        <a href="/details/r/C280211">
-
-                            <h3>Rickmansworth, <span class="highlight">William</span> <span class="highlight">Penn</span></h3>
-                            <p>Department of Education and Science and predecessors: Secondary Schools Digest files. HERTFORDSHIRE. County Schools. Rickmansworth, <span class="highlight">William</span> <span class="highlight">Penn</span>.</p>
-                            <table>
-                                <tbody><tr>
-                                    <td class="item-desc-label">
-                                        Held by:
-                                    </td>
-                                    <td>
-                                        The National Archives - Department of Education and Science
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Date:
-                                    </td>
-                                    <td>
-                                <span class="itemContent">
-                                    1949 - 1964
-                                </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Reference:
-                                    </td>
-                                    <td>
-                                        <span class="itemContent">ED 162/1102</span>
-                                    </td>
-                                </tr>
-
-                                <tr><td class="item-desc-label">Subjects:</td><td><span> Education</span></td></tr>
-                                </tbody></table>
-                        </a>
-                    </li>
-                    <li class="tna-result">
-                        <a href="/details/r/fecec7d87e3b49be906db248bb94469a">
-
-                            <h3>Thomas <span class="highlight">William</span> <span class="highlight">Penn</span></h3>
-                            <p>War Office: Home Guard records, Second World War. Durham 20th Battalion. Thomas <span class="highlight">William</span> <span class="highlight">Penn</span> - born 24/12/1899 - Durham Home Guard, 20th Battalion.</p>
-                            <table>
-                                <tbody><tr>
-                                    <td class="item-desc-label">
-                                        Held by:
-                                    </td>
-                                    <td>
-                                        The National Archives - War Office, Armed Forces, Judge Advocate General, and related bodies
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Date:
-                                    </td>
-                                    <td>
-                                <span class="itemContent">
-                                    14 May 1940 - 31 December 1945
-                                </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Reference:
-                                    </td>
-                                    <td>
-                                        <span class="itemContent">WO 409/27/73/271</span>
-                                    </td>
-                                </tr>
-
-                                <tr><td class="item-desc-label">Subjects:</td><td><span> Armed Forces (General Administration) |  Army |  Conflict |  Operations, battles and campaigns</span></td></tr>
-                                </tbody></table>
-                        </a>
-                    </li>
-                    <li class="tna-result">
-                        <a href="/details/r/C12250681">
-
-                            <h3>Name: <span class="highlight">William</span> <span class="highlight">Penn</span> Kitson.</h3>
-                            <p>Air Ministry: Air Member for Personnel and predecessors: Airmen's Records. 207921 - 208029 (Described at item level). Name: <span class="highlight">William</span> <span class="highlight">Penn</span> Kitson.</p>
-                            <table>
-                                <tbody><tr>
-                                    <td class="item-desc-label">
-                                        Held by:
-                                    </td>
-                                    <td>
-                                        The National Archives - Air Ministry and Royal Air Force records
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Date:
-                                    </td>
-                                    <td>
-                                <span class="itemContent">
-                                    1918 - 1928
-                                </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Reference:
-                                    </td>
-                                    <td>
-                                        <span class="itemContent">AIR 79/1870/207970</span>
-                                    </td>
-                                </tr>
-
-                                <tr><td class="item-desc-label">Subjects:</td><td><span> Air Force |  Armed Forces (General Administration)</span></td></tr>
-                                </tbody></table>
-                        </a>
-                    </li>
-                    <li class="tna-result">
-                        <a href="/details/r/C1791920">
-
-                            <h3>Slough: <span class="highlight">William</span> <span class="highlight">Penn</span> Nursery School</h3>
-                            <p>Board of Education and successors: Medical Branch and Special Services Branch: Nursery School, Files. COUNTIES. BUCKINGHAMSHIRE. Slough: <span class="highlight">William</span> <span class="highlight">Penn</span> Nursery School.</p>
-                            <table>
-                                <tbody><tr>
-                                    <td class="item-desc-label">
-                                        Held by:
-                                    </td>
-                                    <td>
-                                        The National Archives - Department of Education and Science
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Date:
-                                    </td>
-                                    <td>
-                                <span class="itemContent">
-                                    1963
-                                </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Reference:
-                                    </td>
-                                    <td>
-                                        <span class="itemContent">ED 69/275</span>
-                                    </td>
-                                </tr>
-
-                                <tr><td class="item-desc-label">Subjects:</td><td><span> Education</span></td></tr>
-                                </tbody></table>
-                        </a>
-                    </li>
-                    <li class="tna-result">
-                        <a href="/details/r/C1791919">
-
-                            <h3>Slough: <span class="highlight">William</span> <span class="highlight">Penn</span> Nursery School</h3>
-                            <p>Board of Education and successors: Medical Branch and Special Services Branch: Nursery School, Files. COUNTIES. BUCKINGHAMSHIRE. Slough: <span class="highlight">William</span> <span class="highlight">Penn</span> Nursery School.</p>
-                            <table>
-                                <tbody><tr>
-                                    <td class="item-desc-label">
-                                        Held by:
-                                    </td>
-                                    <td>
-                                        The National Archives - Department of Education and Science
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Date:
-                                    </td>
-                                    <td>
-                                <span class="itemContent">
-                                    1947 - 1949
-                                </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Reference:
-                                    </td>
-                                    <td>
-                                        <span class="itemContent">ED 69/274</span>
-                                    </td>
-                                </tr>
-
-                                <tr><td class="item-desc-label">Subjects:</td><td><span> Education</span></td></tr>
-                                </tbody></table>
-                        </a>
-                    </li>
-                    <li class="tna-result">
-                        <a href="/details/r/D727800">
-
-                            <h3>Sentence of <span class="highlight">William</span> <span class="highlight">Penn</span> of Wanstead, Essex</h3>
-                            <p>Prerogative Court of Canterbury and related Probate Jurisdictions: Will Registers. Name of Register: <span class="highlight">Penn</span> Quire Numbers: 67 - 128. Sentence of <span class="highlight">William</span> <span class="highlight">Penn</span> of Wanstead, Essex.</p>
-                            <table>
-                                <tbody><tr>
-                                    <td class="item-desc-label">
-                                        Held by:
-                                    </td>
-                                    <td>
-                                        The National Archives - Prerogative Court of Canterbury
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Date:
-                                    </td>
-                                    <td>
-                                <span class="itemContent">
-                                    02 December 1670
-                                </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Reference:
-                                    </td>
-                                    <td>
-                                        <span class="itemContent">PROB 11/333/649</span>
-                                    </td>
-                                </tr>
-
-                                <tr><td class="item-desc-label">Subjects:</td><td><span> Wills and probate</span></td></tr>
-                                </tbody></table>
-                        </a>
-                    </li>
-                    <li class="tna-result">
-                        <a href="/details/r/C13503001">
-
-                            <h3>W32. Captured ship: <span class="highlight">William</span> <span class="highlight">Penn</span></h3>
-                            <p>High Court of Admiralty: Prize Court: Papers. Prize Papers of the War of 1793-1802. Captured ships (or places) with names beginning with: W. Nos. 27-48.... W32. Captured ship: <span class="highlight">William</span> <span class="highlight">Penn</span>.</p>
-                            <table>
-                                <tbody><tr>
-                                    <td class="item-desc-label">
-                                        Held by:
-                                    </td>
-                                    <td>
-                                        The National Archives - High Court of Admiralty and colonial Vice-Admiralty courts
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Date:
-                                    </td>
-                                    <td>
-                                <span class="itemContent">
-                                    1798
-                                </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Reference:
-                                    </td>
-                                    <td>
-                                        <span class="itemContent">HCA 32/909/32</span>
-                                    </td>
-                                </tr>
-
-                                <tr><td class="item-desc-label">Subjects:</td><td><span> Armed Forces (General Administration) |  International |  Litigation |  Navy</span></td></tr>
-                                </tbody></table>
-                        </a>
-                    </li>
-                    <li class="tna-result">
-                        <a href="/details/r/C1078995">
-
-                            <h3>Captain <span class="highlight">William</span> <span class="highlight">PENN</span>-GASKELL. The Manchester Regiment.</h3>
-                            <p>War Office: Officers' Services, First World War, Long Number Papers (numerical). Officers Services (including Civilian Dependants and Military Staff Appointments): Long Service Papers. Captain <span class="highlight">William</span> <span class="highlight">PENN</span>-GASKELL. The Manchester Regiment.</p>
-                            <table>
-                                <tbody><tr>
-                                    <td class="item-desc-label">
-                                        Held by:
-                                    </td>
-                                    <td>
-                                        The National Archives - War Office, Armed Forces, Judge Advocate General, and related bodies
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Date:
-                                    </td>
-                                    <td>
-                                <span class="itemContent">
-                                    1915 - 1923
-                                </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Reference:
-                                    </td>
-                                    <td>
-                                        <span class="itemContent">WO 339/25083</span>
-                                    </td>
-                                </tr>
-
-                                <tr><td class="item-desc-label">Subjects:</td><td><span> Armed Forces (General Administration) |  Army |  Conflict |  Operations, battles and campaigns</span></td></tr>
-                                </tbody></table>
-                        </a>
-                    </li>
-                    <li class="tna-result">
-                        <a href="/details/r/C16510298">
-
-                            <h3>Folio 156: <span class="highlight">William</span> <span class="highlight">Penn</span>, About his contract.</h3>
-                            <p>Navy Board: Records. IN-LETTERS. Miscellaneous. H.- V. (Described at item level). Folio 156: <span class="highlight">William</span> <span class="highlight">Penn</span>, About his contract.</p>
-                            <table>
-                                <tbody><tr>
-                                    <td class="item-desc-label">
-                                        Held by:
-                                    </td>
-                                    <td>
-                                        The National Archives, Kew - Admiralty, Navy, Royal Marines, and Coastguard
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Date:
-                                    </td>
-                                    <td>
-                                <span class="itemContent">
-                                    20 March 1681
-                                </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Reference:
-                                    </td>
-                                    <td>
-                                        <span class="itemContent">ADM 106/357/119</span>
-                                    </td>
-                                </tr>
-
-                                </tbody></table>
-                        </a>
-                    </li>
-                    <li class="tna-result">
-                        <a href="/details/r/C3950806">
-
-                            <h3>Short title: <span class="highlight">Penn</span> v Robinson. Plaintiffs: <span class="highlight">William</span> <span class="highlight">Penn</span> and <span class="highlight">William</span> <span class="highlight">Penn</span>. Defendants: <span class="highlight">William</span> Robinson. Subject: ...</h3>
-                            <p>Court of Chancery: Six Clerks Office: Pleadings before 1714, Bridges. Short title: <span class="highlight">Penn</span> v Robinson. Plaintiffs: <span class="highlight">William</span> <span class="highlight">Penn</span> and <span class="highlight">William</span> <span class="highlight">Penn</span>. Defendants: <span class="highlight">William</span> Robinson. Subject: property in Kidderminster, Worcestershire. Document type: Bill only.</p>
-                            <table>
-                                <tbody><tr>
-                                    <td class="item-desc-label">
-                                        Held by:
-                                    </td>
-                                    <td>
-                                        The National Archives - Chancery, the Wardrobe, Royal Household, Exchequer and various commissions
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Date:
-                                    </td>
-                                    <td>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
                                 <span class="itemContent">
                                     1683
                                 </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Reference:
-                                    </td>
-                                    <td>
-                                        <span class="itemContent">C 5/537/44</span>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">C 5/537/44</span>
+                                        </td>
+                                    </tr>
 
-                                <tr><td class="item-desc-label">Subjects:</td><td><span> Litigation</span></td></tr>
-                                </tbody></table>
-                        </a>
-                    </li>
-                    <li class="tna-result">
-                        <a href="/details/r/D871281">
+                                    <tr><td class="item-desc-label">Subjects:</td><td><span> Litigation</span></td></tr>
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li class="tna-result">
+                            <a href="/details/r/D871281">
 
-                            <h3>Will of <span class="highlight">William</span> <span class="highlight">Penn</span> of Canterbury, Kent</h3>
-                            <p>Prerogative Court of Canterbury and related Probate Jurisdictions: Will Registers. Name of Register: Goare Quire Numbers: 59 - 118. Will of <span class="highlight">William</span> <span class="highlight">Penn</span> of Canterbury, Kent.</p>
-                            <table>
-                                <tbody><tr>
-                                    <td class="item-desc-label">
-                                        Held by:
-                                    </td>
-                                    <td>
-                                        The National Archives - Prerogative Court of Canterbury
-                                    </td>
-                                </tr>
+                                <h3>Will of <span class="highlight">William</span> <span class="highlight">Penn</span> of Canterbury, Kent</h3>
+                                <p>Prerogative Court of Canterbury and related Probate Jurisdictions: Will Registers. Name of Register: Goare Quire Numbers: 59 - 118. Will of <span class="highlight">William</span> <span class="highlight">Penn</span> of Canterbury, Kent.</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            The National Archives - Prerogative Court of Canterbury
+                                        </td>
+                                    </tr>
 
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Date:
-                                    </td>
-                                    <td>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
                                 <span class="itemContent">
                                     25 May 1637
                                 </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Reference:
-                                    </td>
-                                    <td>
-                                        <span class="itemContent">PROB 11/174/242</span>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">PROB 11/174/242</span>
+                                        </td>
+                                    </tr>
 
-                                <tr><td class="item-desc-label">Subjects:</td><td><span> Wills and probate</span></td></tr>
-                                </tbody></table>
-                        </a>
-                    </li>
-                    <li class="tna-result">
-                        <a href="/details/r/C6652486">
+                                    <tr><td class="item-desc-label">Subjects:</td><td><span> Wills and probate</span></td></tr>
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li class="tna-result">
+                            <a href="/details/r/C6652486">
 
-                            <h3>Hertfordshire: Rickmansworth: <span class="highlight">William</span> <span class="highlight">Penn</span> County Secondary School</h3>
-                            <p>Board of Education and successors: HM Inspectorate: Reports on Secondary Institutions. HERTFORDSHIRE. Hertfordshire: Reports on secondary institutions (described at item level). Hertfordshire: Rickmansworth: <span class="highlight">William</span> <span class="highlight">Penn</span> County Secondary School.</p>
-                            <table>
-                                <tbody><tr>
-                                    <td class="item-desc-label">
-                                        Held by:
-                                    </td>
-                                    <td>
-                                        The National Archives - Department of Education and Science
-                                    </td>
-                                </tr>
+                                <h3>Hertfordshire: Rickmansworth: <span class="highlight">William</span> <span class="highlight">Penn</span> County Secondary School</h3>
+                                <p>Board of Education and successors: HM Inspectorate: Reports on Secondary Institutions. HERTFORDSHIRE. Hertfordshire: Reports on secondary institutions (described at item level). Hertfordshire: Rickmansworth: <span class="highlight">William</span> <span class="highlight">Penn</span> County Secondary School.</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            The National Archives - Department of Education and Science
+                                        </td>
+                                    </tr>
 
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Date:
-                                    </td>
-                                    <td>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
                                 <span class="itemContent">
                                     1958 - 1960
                                 </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Reference:
-                                    </td>
-                                    <td>
-                                        <span class="itemContent">ED 109/9315/4</span>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">ED 109/9315/4</span>
+                                        </td>
+                                    </tr>
 
-                                <tr><td class="item-desc-label">Subjects:</td><td><span> Education</span></td></tr>
-                                </tbody></table>
-                        </a>
-                    </li>
-                    <li class="tna-result">
-                        <a href="/details/r/C279284">
+                                    <tr><td class="item-desc-label">Subjects:</td><td><span> Education</span></td></tr>
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li class="tna-result">
+                            <a href="/details/r/C279284">
 
-                            <h3>Slough: <span class="highlight">William</span> <span class="highlight">Penn</span> County Secondary School</h3>
-                            <p>Department of Education and Science and predecessors: Secondary Schools Digest files. BUCKINGHAMSHIRE. Slough: <span class="highlight">William</span> <span class="highlight">Penn</span> County Secondary School.</p>
-                            <table>
-                                <tbody><tr>
-                                    <td class="item-desc-label">
-                                        Held by:
-                                    </td>
-                                    <td>
-                                        The National Archives, Kew - Department of Education and Science
-                                    </td>
-                                </tr>
+                                <h3>Slough: <span class="highlight">William</span> <span class="highlight">Penn</span> County Secondary School</h3>
+                                <p>Department of Education and Science and predecessors: Secondary Schools Digest files. BUCKINGHAMSHIRE. Slough: <span class="highlight">William</span> <span class="highlight">Penn</span> County Secondary School.</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            The National Archives, Kew - Department of Education and Science
+                                        </td>
+                                    </tr>
 
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Date:
-                                    </td>
-                                    <td>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
                                 <span class="itemContent">
                                     1947 - 1952
                                 </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Reference:
-                                    </td>
-                                    <td>
-                                        <span class="itemContent">ED 162/175</span>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">ED 162/175</span>
+                                        </td>
+                                    </tr>
 
-                                </tbody></table>
-                        </a>
-                    </li>
-                    <li class="tna-result">
-                        <a href="/details/r/C5208757">
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li class="tna-result">
+                            <a href="/details/r/C5208757">
 
-                            <h3>Short title: Cookes v Penne. Plaintiffs: Jane Cookes widow. Defendants: <span class="highlight">William</span> Penne , <span class="highlight">William</span> Penne ...</h3>
-                            <p>Court of Chancery: Six Clerks Office: Pleadings before 1714, Collins. Short title: Cookes v Penne. Plaintiffs: Jane Cookes widow. Defendants: <span class="highlight">William</span> Penne , <span class="highlight">William</span> Penne , Margaret Penne his wife, Edward Sheldon , Amphillis Sheldon his wife, John Sparry and others</p>
-                            <table>
-                                <tbody><tr>
-                                    <td class="item-desc-label">
-                                        Held by:
-                                    </td>
-                                    <td>
-                                        The National Archives - Chancery, the Wardrobe, Royal Household, Exchequer and various commissions
-                                    </td>
-                                </tr>
+                                <h3>Short title: Cookes v Penne. Plaintiffs: Jane Cookes widow. Defendants: <span class="highlight">William</span> Penne , <span class="highlight">William</span> Penne ...</h3>
+                                <p>Court of Chancery: Six Clerks Office: Pleadings before 1714, Collins. Short title: Cookes v Penne. Plaintiffs: Jane Cookes widow. Defendants: <span class="highlight">William</span> Penne , <span class="highlight">William</span> Penne , Margaret Penne his wife, Edward Sheldon , Amphillis Sheldon his wife, John Sparry and others</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            The National Archives - Chancery, the Wardrobe, Royal Household, Exchequer and various commissions
+                                        </td>
+                                    </tr>
 
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Date:
-                                    </td>
-                                    <td>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
                                 <span class="itemContent">
                                     1652
                                 </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="item-desc-label">
-                                        Reference:
-                                    </td>
-                                    <td>
-                                        <span class="itemContent">C 6/120/39</span>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">C 6/120/39</span>
+                                        </td>
+                                    </tr>
 
-                                <tr><td class="item-desc-label">Subjects:</td><td><span> Litigation |  Marriage and divorce</span></td></tr>
-                                </tbody></table>
-                        </a>
-                    </li>
-                </ul>
+                                    <tr><td class="item-desc-label">Subjects:</td><td><span> Litigation |  Marriage and divorce</span></td></tr>
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li class="tna-result">
+                            <a href="/details/r/C11688804">
+
+                                <h3><span class="highlight">William</span> <span class="highlight">Penn</span>.</h3>
+                                <p>Air Ministry: Air Member for Personnel and predecessors: Airmen's Records. 68901 - 68983 (Described at item level). <span class="highlight">William</span> <span class="highlight">Penn</span>.</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            The National Archives - Air Ministry and Royal Air Force records
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
+                                    <span class="itemContent">
+                                        1918 - 1928
+                                    </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">AIR 79/637/68906</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr><td class="item-desc-label">Subjects:</td><td><span> Air Force |  Armed Forces (General Administration)</span></td></tr>
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li class="tna-result">
+                            <a href="/details/r/C280211">
+
+                                <h3>Rickmansworth, <span class="highlight">William</span> <span class="highlight">Penn</span></h3>
+                                <p>Department of Education and Science and predecessors: Secondary Schools Digest files. HERTFORDSHIRE. County Schools. Rickmansworth, <span class="highlight">William</span> <span class="highlight">Penn</span>.</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            The National Archives - Department of Education and Science
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
+                                    <span class="itemContent">
+                                        1949 - 1964
+                                    </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">ED 162/1102</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr><td class="item-desc-label">Subjects:</td><td><span> Education</span></td></tr>
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li class="tna-result">
+                            <a href="/details/r/fecec7d87e3b49be906db248bb94469a">
+
+                                <h3>Thomas <span class="highlight">William</span> <span class="highlight">Penn</span></h3>
+                                <p>War Office: Home Guard records, Second World War. Durham 20th Battalion. Thomas <span class="highlight">William</span> <span class="highlight">Penn</span> - born 24/12/1899 - Durham Home Guard, 20th Battalion.</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            The National Archives - War Office, Armed Forces, Judge Advocate General, and related bodies
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
+                                    <span class="itemContent">
+                                        14 May 1940 - 31 December 1945
+                                    </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">WO 409/27/73/271</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr><td class="item-desc-label">Subjects:</td><td><span> Armed Forces (General Administration) |  Army |  Conflict |  Operations, battles and campaigns</span></td></tr>
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li class="tna-result">
+                            <a href="/details/r/C12250681">
+
+                                <h3>Name: <span class="highlight">William</span> <span class="highlight">Penn</span> Kitson.</h3>
+                                <p>Air Ministry: Air Member for Personnel and predecessors: Airmen's Records. 207921 - 208029 (Described at item level). Name: <span class="highlight">William</span> <span class="highlight">Penn</span> Kitson.</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            The National Archives - Air Ministry and Royal Air Force records
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
+                                    <span class="itemContent">
+                                        1918 - 1928
+                                    </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">AIR 79/1870/207970</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr><td class="item-desc-label">Subjects:</td><td><span> Air Force |  Armed Forces (General Administration)</span></td></tr>
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li class="tna-result">
+                            <a href="/details/r/C1791920">
+
+                                <h3>Slough: <span class="highlight">William</span> <span class="highlight">Penn</span> Nursery School</h3>
+                                <p>Board of Education and successors: Medical Branch and Special Services Branch: Nursery School, Files. COUNTIES. BUCKINGHAMSHIRE. Slough: <span class="highlight">William</span> <span class="highlight">Penn</span> Nursery School.</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            The National Archives - Department of Education and Science
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
+                                    <span class="itemContent">
+                                        1963
+                                    </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">ED 69/275</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr><td class="item-desc-label">Subjects:</td><td><span> Education</span></td></tr>
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li class="tna-result">
+                            <a href="/details/r/C1791919">
+
+                                <h3>Slough: <span class="highlight">William</span> <span class="highlight">Penn</span> Nursery School</h3>
+                                <p>Board of Education and successors: Medical Branch and Special Services Branch: Nursery School, Files. COUNTIES. BUCKINGHAMSHIRE. Slough: <span class="highlight">William</span> <span class="highlight">Penn</span> Nursery School.</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            The National Archives - Department of Education and Science
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
+                                    <span class="itemContent">
+                                        1947 - 1949
+                                    </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">ED 69/274</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr><td class="item-desc-label">Subjects:</td><td><span> Education</span></td></tr>
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li class="tna-result">
+                            <a href="/details/r/D727800">
+
+                                <h3>Sentence of <span class="highlight">William</span> <span class="highlight">Penn</span> of Wanstead, Essex</h3>
+                                <p>Prerogative Court of Canterbury and related Probate Jurisdictions: Will Registers. Name of Register: <span class="highlight">Penn</span> Quire Numbers: 67 - 128. Sentence of <span class="highlight">William</span> <span class="highlight">Penn</span> of Wanstead, Essex.</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            The National Archives - Prerogative Court of Canterbury
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
+                                    <span class="itemContent">
+                                        02 December 1670
+                                    </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">PROB 11/333/649</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr><td class="item-desc-label">Subjects:</td><td><span> Wills and probate</span></td></tr>
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li class="tna-result">
+                            <a href="/details/r/C13503001">
+
+                                <h3>W32. Captured ship: <span class="highlight">William</span> <span class="highlight">Penn</span></h3>
+                                <p>High Court of Admiralty: Prize Court: Papers. Prize Papers of the War of 1793-1802. Captured ships (or places) with names beginning with: W. Nos. 27-48.... W32. Captured ship: <span class="highlight">William</span> <span class="highlight">Penn</span>.</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            The National Archives - High Court of Admiralty and colonial Vice-Admiralty courts
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
+                                    <span class="itemContent">
+                                        1798
+                                    </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">HCA 32/909/32</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr><td class="item-desc-label">Subjects:</td><td><span> Armed Forces (General Administration) |  International |  Litigation |  Navy</span></td></tr>
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li class="tna-result">
+                            <a href="/details/r/C1078995">
+
+                                <h3>Captain <span class="highlight">William</span> <span class="highlight">PENN</span>-GASKELL. The Manchester Regiment.</h3>
+                                <p>War Office: Officers' Services, First World War, Long Number Papers (numerical). Officers Services (including Civilian Dependants and Military Staff Appointments): Long Service Papers. Captain <span class="highlight">William</span> <span class="highlight">PENN</span>-GASKELL. The Manchester Regiment.</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            The National Archives - War Office, Armed Forces, Judge Advocate General, and related bodies
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
+                                    <span class="itemContent">
+                                        1915 - 1923
+                                    </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">WO 339/25083</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr><td class="item-desc-label">Subjects:</td><td><span> Armed Forces (General Administration) |  Army |  Conflict |  Operations, battles and campaigns</span></td></tr>
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li class="tna-result">
+                            <a href="/details/r/C16510298">
+
+                                <h3>Folio 156: <span class="highlight">William</span> <span class="highlight">Penn</span>, About his contract.</h3>
+                                <p>Navy Board: Records. IN-LETTERS. Miscellaneous. H.- V. (Described at item level). Folio 156: <span class="highlight">William</span> <span class="highlight">Penn</span>, About his contract.</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            The National Archives, Kew - Admiralty, Navy, Royal Marines, and Coastguard
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
+                                    <span class="itemContent">
+                                        20 March 1681
+                                    </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">ADM 106/357/119</span>
+                                        </td>
+                                    </tr>
+
+                                    </tbody></table>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
                 <div id="paging-and-results-number">
                     <div class="paginationWrapper">
@@ -3019,13 +3036,7 @@
     Version 6.0 - October 2018 - OnSitePublic
 </div>
 
-<!--[if lt IE 9]>
-<script src="http://discovery.nationalarchives.gov.uk/Scripts/jquery-1.10.2.min.js"></script>
-<script src="http://discovery.nationalarchives.gov.uk/Scripts/jquery-migrate-1.0.0.js"></script>
-<![endif]-->
-<!--[if gte IE 9]><!-->
-<script src="http://discovery.nationalarchives.gov.uk/Scripts/jquery-2.0.3.min.js"></script>
-<!--<![endif]-->
+
 <!-- TNA scripts -->
 
 <!-- <script src="./search-results_files/discovery.21.05.2018.min.js"></script> -->

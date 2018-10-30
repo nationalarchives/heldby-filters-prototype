@@ -232,7 +232,10 @@
     /* Prototype CSS */
 
     #generic-tabs li {
-        width: 32%;
+        width: 24%;
+    }
+    #generic-tabs li span {
+        font-size: 1.1em;
     }
     .tna-results, .tab-content {
         display: none;
@@ -390,11 +393,9 @@
                 <ul id="generic-tabs" class="tabs">
                     <li class="selected tab" id="records-tab" data-tab="tab-1"><span>All archives (2,246)</span></li>
                     <li class="tab" id="tna-tab" data-tab="tab-2"><span>The National Archives (1,085)</span></li>
+                    <li class="tab" id="other-tab" data-tab="tab-3"><span>Other archives (1,161)</span></li>
                     <li class="tab" id="name-authorities-tab" data-tab="tab-1"><span>Record creators (6)</span></li>
                 </ul>
-                <span class="tab-description records">
-                    Descriptions of records and information about how to access them
-                </span>
             </div>
 
     </section>
@@ -1477,12 +1478,814 @@
                         </form>            </li>
                 </ul>
                 </div>
+                <div id="filter-tab-3" class="tna-filters tab-content">
+                    <ul class="available-filters" role="tablist" aria-multiselectable="true">
+                        <li id="dates">
+                            <form action="/results/r" method="get"><input name="_q" type="hidden" value="william penn"><input name="_hb" type="hidden" value="oth">                    <h3><a href="#" class="filter-toggler expanded" id="date-filters" role="tab">Date</a></h3>
+                                <div class="filter-togglee" aria-labelledby="date-filters" role="tabpanel" aria-hidden="false" style="">
+                                    <ul>
+                                        <li>
+                                            <input type="checkbox" name="_p" value="0" id="p_0">
+                                            <label for="p_0">
+                                                Dates unknown
+                                                <span class="filterNumber">(163)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="_p" value="1950" id="p_1950">
+                                            <label for="p_1950">
+                                                1950+
+                                                <span class="filterNumber">(39)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="_p" value="1925" id="p_1925">
+                                            <label for="p_1925">
+                                                1925 - 1949
+                                                <span class="filterNumber">(61)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="_p" value="1900" id="p_1900">
+                                            <label for="p_1900">
+                                                1900 - 1924
+                                                <span class="filterNumber">(109)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="_p" value="1800" id="p_1800">
+                                            <label for="p_1800">
+                                                1800 - 1899
+                                                <span class="filterNumber">(344)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="_p" value="1700" id="p_1700">
+                                            <label for="p_1700">
+                                                1700 - 1799
+                                                <span class="filterNumber">(304)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="_p" value="1600" id="p_1600">
+                                            <label for="p_1600">
+                                                1600 - 1699
+                                                <span class="filterNumber">(218)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="_p" value="1500" id="p_1500">
+                                            <label for="p_1500">
+                                                1500 - 1599
+                                                <span class="filterNumber">(42)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="_p" value="1400" id="p_1400">
+                                            <label for="p_1400">
+                                                1400 - 1499
+                                                <span class="filterNumber">(37)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="_p" value="1300" id="p_1300">
+                                            <label for="p_1300">
+                                                1300 - 1399
+                                                <span class="filterNumber">(31)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="_p" value="1200" id="p_1200">
+                                            <label for="p_1200">
+                                                1200 - 1299
+                                                <span class="filterNumber">(15)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="_p" value="1100" id="p_1100">
+                                            <label for="p_1100">
+                                                1100 - 1199
+                                                <span class="filterNumber">(1)</span>
+                                            </label>
+                                        </li>
+                                    </ul><input name="Refine dates" value="Refine" type="submit" alt="Refine dates" title="Refine dates">
+                                </div>
+                            </form>            </li>
+                        <li id="nra-repositories">
+                            <form action="/results/r" method="get"><input name="_q" type="hidden" value="william penn"><input name="_hb" type="hidden" value="oth">                    <h3><a href="#" class="filter-toggler expanded" id="held-by-filters" role="tab">Held by</a></h3>
+                                <div class="filter-togglee" aria-labelledby="held-by-filters" role="tabpanel" aria-hidden="false" style="">
+                                    <ul>
+                                        <li>
+                                            <input type="checkbox" name="_nrar" value="8" id="r_8">
+                                            <label for="r_8">
+                                                Centre for Buckinghamshire Studies
+                                                <span>(133)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="_nrar" value="143" id="r_143">
+                                            <label for="r_143">
+                                                Birmingham: Archives, Heritage and Photography Service
+                                                <span>(79)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="_nrar" value="182" id="r_182">
+                                            <label for="r_182">
+                                                West Sussex Record Office
+                                                <span>(74)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="_nrar" value="149" id="r_149">
+                                            <label for="r_149">
+                                                Wolverhampton City Archives
+                                                <span>(74)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="_nrar" value="74" id="r_74">
+                                            <label for="r_74">
+                                                London Metropolitan Archives: City of London
+                                                <span>(70)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="_nrar" value="170" id="r_170">
+                                            <label for="r_170">
+                                                Staffordshire and Stoke-on-Trent Archive Service: William Salt Library
+                                                <span>(61)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="_nrar" value="46" id="r_46">
+                                            <label for="r_46">
+                                                Hertfordshire Archives and Local Studies
+                                                <span>(53)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="_nrar" value="188" id="r_188">
+                                            <label for="r_188">
+                                                Shakespeare Birthplace Trust
+                                                <span>(48)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="_nrar" value="166" id="r_166">
+                                            <label for="r_166">
+                                                Shropshire Archives
+                                                <span>(35)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="_nrar" value="179" id="r_179">
+                                            <label for="r_179">
+                                                East Sussex Record Office
+                                                <span>(34)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="161" id="r_161">
+                                            <label for="r_161">
+                                                Oxford University: Bodleian Library, Special Collections
+                                                <span>(34)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="169" id="r_169">
+                                            <label for="r_169">
+                                                Staffordshire and Stoke-on-Trent Archive Service: Staffordshire County Record Office
+                                                <span>(30)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="55" id="r_55">
+                                            <label for="r_55">
+                                                Lancashire Archives
+                                                <span>(28)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="64" id="r_64">
+                                            <label for="r_64">
+                                                National Maritime Museum: The Caird Library, Manuscripts Section
+                                                <span>(28)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="26" id="r_26">
+                                            <label for="r_26">
+                                                Derbyshire Record Office
+                                                <span>(26)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="2189" id="r_2189">
+                                            <label for="r_2189">
+                                                Berkeley Castle Muniments
+                                                <span>(21)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="168" id="r_168">
+                                            <label for="r_168">
+                                                Somerset Heritage Centre (South West Heritage Trust)
+                                                <span>(18)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="45" id="r_45">
+                                            <label for="r_45">
+                                                Worcestershire Archive and Archaeology Service
+                                                <span>(18)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="61" id="r_61">
+                                            <label for="r_61">
+                                                Parliamentary Archives
+                                                <span>(16)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="145" id="r_145">
+                                            <label for="r_145">
+                                                Dudley Archives and Local History Service
+                                                <span>(13)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="190" id="r_190">
+                                            <label for="r_190">
+                                                Wiltshire and Swindon History Centre
+                                                <span>(13)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="40" id="r_40">
+                                            <label for="r_40">
+                                                Gloucestershire Archives
+                                                <span>(12)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="109" id="r_109">
+                                            <label for="r_109">
+                                                Lambeth Palace Library
+                                                <span>(12)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="176" id="r_176">
+                                            <label for="r_176">
+                                                Surrey History Centre
+                                                <span>(12)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="56" id="r_56">
+                                            <label for="r_56">
+                                                Leicestershire, Leicester and Rutland, Record Office for
+                                                <span>(11)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="187" id="r_187">
+                                            <label for="r_187">
+                                                Warwickshire County Record Office
+                                                <span>(11)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="54" id="r_54">
+                                            <label for="r_54">
+                                                Canterbury Cathedral Archives
+                                                <span>(9)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="2" id="r_2">
+                                            <label for="r_2">
+                                                Bristol Archives
+                                                <span>(8)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="4" id="r_4">
+                                            <label for="r_4">
+                                                Bedfordshire Archives &amp; Records Service
+                                                <span>(7)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="27" id="r_27">
+                                            <label for="r_27">
+                                                Devon Archives and Local Studies Service (South West Heritage Trust)
+                                                <span>(7)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="154" id="r_154">
+                                            <label for="r_154">
+                                                Northamptonshire Record Office
+                                                <span>(7)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="17" id="r_17">
+                                            <label for="r_17">
+                                                Cheshire Archives and Local Studies
+                                                <span>(6)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="144" id="r_144">
+                                            <label for="r_144">
+                                                Coventry Archives &amp; Research Centre
+                                                <span>(6)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="153" id="r_153">
+                                            <label for="r_153">
+                                                Norfolk Record Office
+                                                <span>(6)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="5" id="r_5">
+                                            <label for="r_5">
+                                                Berkshire Record Office
+                                                <span>(5)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="1585" id="r_1585">
+                                            <label for="r_1585">
+                                                Historic England Archive
+                                                <span>(5)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="199" id="r_199">
+                                            <label for="r_199">
+                                                Sheffield City Archives
+                                                <span>(5)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="11" id="r_11">
+                                            <label for="r_11">
+                                                Huntingdonshire Archives
+                                                <span>(4)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="133" id="r_133">
+                                            <label for="r_133">
+                                                Manchester University: University of Manchester Library
+                                                <span>(4)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="60" id="r_60">
+                                            <label for="r_60">
+                                                Natural History Museum Library and Archives
+                                                <span>(4)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="191" id="r_191">
+                                            <label for="r_191">
+                                                North Yorkshire County Record Office
+                                                <span>(4)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="157" id="r_157">
+                                            <label for="r_157">
+                                                Nottinghamshire Archives
+                                                <span>(4)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="160" id="r_160">
+                                            <label for="r_160">
+                                                Oxfordshire History Centre
+                                                <span>(4)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="387" id="r_387">
+                                            <label for="r_387">
+                                                Royal London Hospital Archives and Museum
+                                                <span>(4)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="146" id="r_146">
+                                            <label for="r_146">
+                                                Sandwell Community History and Archives Service
+                                                <span>(4)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="58" id="r_58">
+                                            <label for="r_58">
+                                                British Library, Manuscript Collections
+                                                <span>(3)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="21" id="r_21">
+                                            <label for="r_21">
+                                                Cornwall Record Office
+                                                <span>(3)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="23" id="r_23">
+                                            <label for="r_23">
+                                                Cumbria Archive Centre, Carlisle
+                                                <span>(3)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="47" id="r_47">
+                                            <label for="r_47">
+                                                East Riding of Yorkshire Archives and Local Studies Service
+                                                <span>(3)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="44" id="r_44">
+                                            <label for="r_44">
+                                                Herefordshire Archive and Records Centre
+                                                <span>(3)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="767" id="r_767">
+                                            <label for="r_767">
+                                                Historical Society of Pennsylvania
+                                                <span>(3)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="189" id="r_189">
+                                            <label for="r_189">
+                                                Isle of Wight Record Office
+                                                <span>(3)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="1991" id="r_1991">
+                                            <label for="r_1991">
+                                                Library and Museum of Freemasonry
+                                                <span>(3)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="28" id="r_28">
+                                            <label for="r_28">
+                                                Plymouth and West Devon Record Office
+                                                <span>(3)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="150" id="r_150">
+                                            <label for="r_150">
+                                                University of Birmingham: Cadbury Research Library: Special Collections
+                                                <span>(3)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="275" id="r_275">
+                                            <label for="r_275">
+                                                Cambridge University: St John's College Library
+                                                <span>(2)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="24" id="r_24">
+                                            <label for="r_24">
+                                                Cumbria Archive Centre, Kendal
+                                                <span>(2)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="220" id="r_220">
+                                            <label for="r_220">
+                                                Gwynedd Archives, Meirionnydd Record Office
+                                                <span>(2)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="84" id="r_84">
+                                            <label for="r_84">
+                                                Hackney Archives Department
+                                                <span>(2)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="41" id="r_41">
+                                            <label for="r_41">
+                                                Hampshire Archives and Local Studies
+                                                <span>(2)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="51" id="r_51">
+                                            <label for="r_51">
+                                                Kent History and Library Centre
+                                                <span>(2)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="2238" id="r_2238">
+                                            <label for="r_2238">
+                                                Longleat House
+                                                <span>(2)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="64" id="r_64">
+                                            <label for="r_64">
+                                                National Maritime Museum: The Caird Library and Archive
+                                                <span>(2)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="758" id="r_758">
+                                            <label for="r_758">
+                                                Oldham Local Studies &amp; Archives
+                                                <span>(2)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="117" id="r_117">
+                                            <label for="r_117">
+                                                Royal Society
+                                                <span>(2)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="2155" id="r_2155">
+                                            <label for="r_2155">
+                                                Salters Company
+                                                <span>(2)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="118" id="r_118">
+                                            <label for="r_118">
+                                                Society of Antiquaries of London
+                                                <span>(2)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="173" id="r_173">
+                                            <label for="r_173">
+                                                Suffolk Record Office, Ipswich Branch
+                                                <span>(2)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="723" id="r_723">
+                                            <label for="r_723">
+                                                American Philosophical Society Library
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="1" id="r_1">
+                                            <label for="r_1">
+                                                Bath Record Office
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="1480" id="r_1480">
+                                            <label for="r_1480">
+                                                Birmingham Archdiocesan Archives
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="59" id="r_59">
+                                            <label for="r_59">
+                                                British Library: Asian and African Studies
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="10" id="r_10">
+                                            <label for="r_10">
+                                                Cambridgeshire Archives
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="1831" id="r_1831">
+                                            <label for="r_1831">
+                                                Cumbria Archive and Local Studies Centre, Whitehaven
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="31" id="r_31">
+                                            <label for="r_31">
+                                                Dorset History Centre
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="1260" id="r_1260">
+                                            <label for="r_1260">
+                                                Haverford College: Quaker Collection
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="381" id="r_381">
+                                            <label for="r_381">
+                                                Institution of Mechanical Engineers Archive
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="2494" id="r_2494">
+                                            <label for="r_2494">
+                                                John Goodchild Collection
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="294" id="r_294">
+                                            <label for="r_294">
+                                                Kingsbridge Cookworthy Museum
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="57" id="r_57">
+                                            <label for="r_57">
+                                                Lincolnshire Archives
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="138" id="r_138">
+                                            <label for="r_138">
+                                                Liverpool Record Office
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="106" id="r_106">
+                                            <label for="r_106">
+                                                London University: London School of Economics, The Women's Library
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="746" id="r_746">
+                                            <label for="r_746">
+                                                Maryland Historical Society
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="63" id="r_63">
+                                            <label for="r_63">
+                                                National Army Museum Templer Study Centre
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="345" id="r_345">
+                                            <label for="r_345">
+                                                National Gallery Libraries and Archive
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="307" id="r_307">
+                                            <label for="r_307">
+                                                National Motor Museum
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="159" id="r_159">
+                                            <label for="r_159">
+                                                Nottingham University Library, Department of Manuscripts and Special Collections
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="111" id="r_111">
+                                            <label for="r_111">
+                                                Religious Society of Friends Library
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="128" id="r_128">
+                                            <label for="r_128">
+                                                Rochdale Local Studies and Archive
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="198" id="r_198">
+                                            <label for="r_198">
+                                                Rotherham Archives and Local Studies
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="116" id="r_116">
+                                            <label for="r_116">
+                                                Royal Institution of Great Britain
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="174" id="r_174">
+                                            <label for="r_174">
+                                                Suffolk Record Office, Bury St Edmunds Branch
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="175" id="r_175">
+                                            <label for="r_175">
+                                                Suffolk Record Office, Lowestoft Branch
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="183" id="r_183">
+                                            <label for="r_183">
+                                                Tyne and Wear Archives
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="714" id="r_714">
+                                            <label for="r_714">
+                                                University of Michigan: William L Clements Library
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="738" id="r_738">
+                                            <label for="r_738">
+                                                University of Southampton Library
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="205" id="r_205">
+                                            <label for="r_205">
+                                                West Yorkshire Archive Service, Leeds
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="201" id="r_201">
+                                            <label for="r_201">
+                                                West Yorkshire Archive Service, Wakefield
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="132" id="r_132">
+                                            <label for="r_132">
+                                                Wigan Archives and Local Studies
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                        <li style="display: none;">
+                                            <input type="checkbox" name="_nrar" value="207" id="r_207">
+                                            <label for="r_207">
+                                                Yorkshire Archaeological and Historical Society
+                                                <span>(1)</span>
+                                            </label>
+                                        </li>
+                                    </ul><input name="Refine repositories" value="Refine" type="submit" title="Refine repositories">
+                                    <a href="#" class="filter-toggle">Show all filters</a></div>
+                            </form>            </li>
+                    </ul>
+                </div>
             </div>
 
         <div class="col ends-at-two-thirds clr box" id="search-results">
             <div class="breather">
                 <div id="tab-1" class="all-archives-results tab-content selected">
-                    <h3>Showing results for 'all archives'</h3>
+                    <h3>Showing results from 'all archives'</h3>
                     <ul id="search-control-panel">
                     <li>1 - 15 of 2,246 <span class="not-at-smaller">results</span></li>
                     <li id="sort-form">
@@ -2173,7 +2976,7 @@
                 </ul>
                 </div>
                 <div id="tab-2" class="tna-results tab-content">
-                    <h3>Showing results for 'The National Archives'</h3>
+                    <h3>Showing results from 'The National Archives'</h3>
                     <ul id="search-control-panel">
                     <li>1 - 15 of 1,085 <span class="not-at-smaller">results</span> </li>
                     <li id="sort-form">
@@ -2757,6 +3560,586 @@
                                         </td>
                                         <td>
                                             <span class="itemContent">ADM 106/357/119</span>
+                                        </td>
+                                    </tr>
+
+                                    </tbody></table>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="tab-3" class="tna-results tab-content">
+                    <h3>Showing results from 'other archives'</h3>
+                    <ul id="search-control-panel">
+                        <li>1 - 15 of 1,161 <span class="not-at-smaller">results</span> </li>
+                        <li id="sort-form">
+                            <form action="/results/r" method="get">            <fieldset>
+                                <span class="not-at-smaller"> Sorted</span> by:
+                                <select id="sortDrop" name="_srt"><option value="0">Relevance</option>
+                                    <option value="1">Reference</option>
+                                    <option value="5">Title - ascending</option>
+                                    <option value="6">Title - descending</option>
+                                    <option value="3">Date - ascending</option>
+                                    <option value="4">Date - descending</option>
+                                </select>
+                                <input name="_q" type="hidden" value="william penn"><input name="_hb" type="hidden" value="oth">
+                                <input class="discoverySecondaryCallToActionLink" type="submit" value="Sort" id="sort" title="Sort search results">
+                            </fieldset>
+                            </form>    </li>
+                        <li id="simple-view"><a href="/results/r?_q=william%20penn&amp;_hb=oth&amp;_rv=simple">Simple view</a></li>    <li id="printable-view">
+                        <a onclick="dcsMultiTrack('DCS.dcsuri','/Searchresults/Print','WT.ti','Search Results: Print','WT.cg_n','Utilities','WT.dl','0', 'WT.oss','', 'WT.oss_r','', 'WT.osspageno','', 'WT.ossview','', 'DCSext.searchtype','');" href="javascript:window.print()" title="print">Print</a>
+                    </li>
+                        <li><a id="show-download-form" href="#" class="toggle-export">Export results</a></li></ul>
+                    <ul id="search-results">
+                        <li>
+                            <a href="/details/r/e947bb94-c5d6-4732-aac9-21ad90c5dcd9">
+
+                                <h3>Notes about <span class="highlight">William</span> <span class="highlight">Penn</span></h3>
+                                <p>GASCHERIE, GASHRY AND HANROTT FAMILIES. Papers of Dunn, Lancaster and Dunn, Solicitors. Other papers concerning the <span class="highlight">Penn</span> family : <span class="highlight">William</span> <span class="highlight">Penn</span>, John <span class="highlight">Penn</span> and Cremorne papers.... Original bundle J</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            London Metropolitan Archives: City of London
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
+                                <span class="itemContent">
+                                    Dates unknown
+                                </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">ACC/2079/D3/002</span>
+                                        </td>
+                                    </tr>
+
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/details/r/e3caea52-7126-427c-a26f-f854465c03ea">
+
+                                <h3>From <span class="highlight">William</span> <span class="highlight">Penn</span></h3>
+                                <p>FINNEY OF FULSHAW. JOHN FINNEY (c.1671-1728). Misc. letters received, mainly concerning American interests. From <span class="highlight">William</span> <span class="highlight">Penn</span></p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            Cheshire Archives and Local Studies
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
+                                <span class="itemContent">
+                                    28 June 1711
+                                </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">DFF/12/4</span>
+                                        </td>
+                                    </tr>
+
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/details/r/8f9cfd31-e401-4392-9b96-6f41c1d13d78">
+
+                                <h3>Account of <span class="highlight">William</span> <span class="highlight">Penn</span>.</h3>
+                                <p>Miscellaneous settlements of paupers and related papers. Account of <span class="highlight">William</span> <span class="highlight">Penn</span>.</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            Shakespeare Birthplace Trust
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
+                                <span class="itemContent">
+                                    1786
+                                </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">ER19/6/17</span>
+                                        </td>
+                                    </tr>
+
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/details/r/b84302d7-2bdb-43b8-911b-74cac88daf12">
+
+                                <h3><span class="highlight">William</span> <span class="highlight">Penn</span> of Workington</h3>
+                                <p>PAISLEY AND CO (SOLICITORS) WORKINGTON. Clients' probates and related papers. Letters of Administration</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            Cumbria Archive and Local Studies Centre, Whitehaven
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
+                                <span class="itemContent">
+                                    1911
+                                </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">DPW 5/211</span>
+                                        </td>
+                                    </tr>
+
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/details/r/a51890db-95f9-4e3c-9c3e-afe851ba3a02">
+
+                                <h3>DOCUMENTS RELATING TO <span class="highlight">WILLIAM</span> <span class="highlight">PENN</span></h3>
+                                <p> THE COLLECTION CONTAINS DEEDS</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            Lancashire Archives
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
+                                <span class="itemContent">
+                                    1776 - 1845
+                                </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">DDX 237</span>
+                                        </td>
+                                    </tr>
+
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/details/r/24ca98d5-2872-413a-b46b-226fa94e0e22">
+
+                                <h3>Statutory Declaration of <span class="highlight">William</span> <span class="highlight">Penn</span></h3>
+                                <p>THAMES IRON WORKS. Deeds and documents relating to the titles of freehold and leasehold properties at Greenwich... Premises in West Ham and Deptford and Greenwich. Statutory Declaration of <span class="highlight">William</span> <span class="highlight">Penn</span></p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            London Metropolitan Archives: City of London
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
+                                <span class="itemContent">
+                                    08 September 1899
+                                </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">ACC/1712/104</span>
+                                        </td>
+                                    </tr>
+
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/details/r/5cad7c16-c48b-498d-8eb3-12313810647d">
+
+                                <h3>Information: <span class="highlight">William</span> <span class="highlight">Penn</span> v <span class="highlight">William</span> Prudence. - burglary.</h3>
+                                <p>GAOL DELIVERY SESSIONS AT THE OLD BAILEY POST - 1754. SESSIONS PAPERS. Papers for 1784. Information: <span class="highlight">William</span> <span class="highlight">Penn</span> v <span class="highlight">William</span> Prudence. - burglary.</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            London Metropolitan Archives: City of London
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
+                                <span class="itemContent">
+                                    1784
+                                </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">OB/SP/1784/083</span>
+                                        </td>
+                                    </tr>
+
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/details/r/1052028b-d0df-47d2-b367-0dd78812c3c3">
+
+                                <h3>Probate of the will of <span class="highlight">William</span> <span class="highlight">Penn</span></h3>
+                                <p>GASCHERIE, GASHRY AND HANROTT FAMILIES. Papers of Dunn, Lancaster and Dunn, Solicitors. Other papers concerning the <span class="highlight">Penn</span> family : <span class="highlight">William</span> <span class="highlight">Penn</span>, John <span class="highlight">Penn</span> and Cremorne papers.... proved in the Prerogative Court of Canterbury on 2 May 1727 with letter of 21 Aug 1913 from Roberts Seyd &amp; Co, Solicitors returning it...</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            London Metropolitan Archives: City of London
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
+                                <span class="itemContent">
+                                    1727 - 1913
+                                </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">ACC/2079/D3/001</span>
+                                        </td>
+                                    </tr>
+
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/details/r/4921278c-643f-4a7c-8fce-582c45c86065">
+
+                                <h3>Mrs. <span class="highlight">William</span> <span class="highlight">Penn</span>, Taverham Hall, Norwich</h3>
+                                <p><span class="highlight">William</span> Downing, bookseller and publisher, of Birmingham. LETTERS FROM CUSTOMERS. Unmounted correspondence arranged alphabetically by name of writer as follows. Mrs. <span class="highlight">William</span> <span class="highlight">Penn</span>, Taverham Hall, Norwich</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            Birmingham: Archives, Heritage and Photography Service
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
+                                <span class="itemContent">
+                                    Dates unknown
+                                </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">MS 1366/B/6/344</span>
+                                        </td>
+                                    </tr>
+
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/details/r/0c8f0026-014f-4d56-b590-681ff78fcef0">
+
+                                <h3><span class="highlight">William</span> <span class="highlight">Penn</span> to Ormond : written from Philadelphia</h3>
+                                <p>CARTE PAPERS. Fair copies of such parts of the Duke of Ormonde's papers and correspondence as... Assures the Duke of the writer's grateful remembrance of the favour shewn to him in the Court of Ireland. Notices the severities exercised against Quakers...</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            Oxford University: Bodleian Library, Special Collections
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
+                                <span class="itemContent">
+                                    09 January 1684
+                                </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">MS. Carte 199, fol(s). 5-7</span>
+                                        </td>
+                                    </tr>
+
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/details/r/ff478163-f859-49dd-8933-d110e6db87f0">
+
+                                <h3>Articles of Impeachment of Sir <span class="highlight">William</span> <span class="highlight">Penn</span></h3>
+                                <p>House of Lords. Records of the Parliament Office, House of Lords. House of Lords: Parliament Office: Journal Office. House of Lords: Journal Office: Main Papers.... Answer of Sir <span class="highlight">William</span> <span class="highlight">Penn</span>.</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            Parliamentary Archives
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
+                                <span class="itemContent">
+                                    24 April 1668
+                                </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">HL/PO/JO/10/3/181/31</span>
+                                        </td>
+                                    </tr>
+
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/details/r/310fd6d5-5092-4983-a504-66fd4da106e2">
+
+                                <h3>Abstract of Title of Richard <span class="highlight">William</span> <span class="highlight">Penn</span>, Earl Howe, to certain closes called Gleke Pieces,...</h3>
+                                <p>DOCUMENTS RELATING TO <span class="highlight">WILLIAM</span> <span class="highlight">PENN</span>. Abstract of Title of Richard <span class="highlight">William</span> <span class="highlight">Penn</span>, Earl Howe, to certain closes called Gleke Pieces, formerly part of the Rectory of Whalley.</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            Lancashire Archives
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
+                                <span class="itemContent">
+                                    23 March 1776 - 27 September 1834
+                                </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">DDX 237/1</span>
+                                        </td>
+                                    </tr>
+
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/details/r/8bead2cb-441b-472c-b86d-5e1789eb1950">
+
+                                <h3>Sir <span class="highlight">William</span> <span class="highlight">Penn</span> to Sir Roger Cuttance</h3>
+                                <p>CARTE PAPERS. Correspondence, papers, of Edward Montagu 1st Earl of Sandwich. Approves of the appointment of his Lieutenant, O'Brien, to take charge of a Dutch prize-ship...</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            Oxford University: Bodleian Library, Special Collections
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
+                                <span class="itemContent">
+                                    05 August 1665
+                                </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">MS. Carte 75, fol(s). 344</span>
+                                        </td>
+                                    </tr>
+
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/details/r/826474bd-177c-40ee-a0a5-b1e2ee1eed31">
+
+                                <h3>MR/RC/7/152 <span class="highlight">William</span> <span class="highlight">Penn</span></h3>
+                                <p>MIDDLESEX SESSIONS OF THE PEACE: ENROLMENT, REGISTRATION AND DEPOSIT. RELIGION. Convictions for holding conventicles. Certificates of Conventicles Convictions. MR/RC/7/152 <span class="highlight">William</span> <span class="highlight">Penn</span></p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            London Metropolitan Archives: City of London
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
+                                <span class="itemContent">
+                                    01 February 1685 - 30 April 1686
+                                </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">MR/RC/07/1-176</span>
+                                        </td>
+                                    </tr>
+
+                                    </tbody></table>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/details/r/80d4f0b6-4c97-45da-a5d4-6d6100a22bdb">
+
+                                <h3>Abstract of Indenture between Richard <span class="highlight">William</span> <span class="highlight">Penn</span>, Earl Howe, and Thomas Metcalfe of Lincolns Inn,...</h3>
+                                <p>DOCUMENTS RELATING TO <span class="highlight">WILLIAM</span> <span class="highlight">PENN</span>. Abstract of Indenture between Richard <span class="highlight">William</span> <span class="highlight">Penn</span>, Earl Howe, and Thomas Metcalfe of Lincolns Inn, co. Middlesex, gent. for barring the entail.</p>
+                                <table>
+                                    <tbody><tr>
+                                        <td class="item-desc-label">
+                                            Held by:
+                                        </td>
+                                        <td>
+                                            Lancashire Archives
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Date:
+                                        </td>
+                                        <td>
+                                <span class="itemContent">
+                                    1845
+                                </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="item-desc-label">
+                                            Reference:
+                                        </td>
+                                        <td>
+                                            <span class="itemContent">DDX 237/4</span>
                                         </td>
                                     </tr>
 

@@ -229,20 +229,71 @@
         }
     }
 
-    /* Prototype CSS */
+/* Prototype CSS */
 
-    #generic-tabs li {
-        width: 24%;
-    }
-    #generic-tabs li span {
-        font-size: 1.1em;
-    }
-    .tna-results, .tab-content {
-        display: none;
-    }
-    .tab-content.selected {
-        display: inherit;
-    }
+   #generic-tabs li {
+       width: 100%;
+       margin-bottom: 5px;
+   }
+   .tna-results, .tab-content {
+       display: none;
+   }
+   .tab-content.selected {
+       display: inherit;
+   }
+   #generic-tabs {
+       margin-top: 20px;
+       display: inline-block;
+       width: 100%;
+   }
+
+   #generic-tabs li {
+       margin-right: 0.4%;
+       border: 2px solid #e5e5e5;
+   }
+   #generic-tabs li.selected {
+       background-color: #efefef;
+       color: #333;
+   }
+   #generic-tabs li span, #generic-tabs li.selected span  {
+       font-size: 0.9em;
+       color: #2A5DB0;
+   }
+   #generic-tabs li.selected span {
+       color: #222;
+   }
+   #generic-tabs li:first-child {
+       margin-right: 0.4%;
+   }
+   .filter-toggler {
+       background-color: transparent;
+       padding: 0.8em 0;
+       border-top: 2px solid #e5e5e5;
+       border-bottom: 2px solid #e5e5e5;
+   }
+   #search-results > li {
+       border-bottom: 1px dotted #DDD;
+   }
+   h2 {
+       font-size: 1.2em;
+   }
+   h3 {
+       font-size: 1em;
+   }
+   #search-control-panel {
+       text-align: left;
+       padding: .8em 0 .5em;
+       font-size: .9em;
+       background: #fff;
+       border-top: 2px solid #e5e5e5;
+       border-bottom: 2px solid #e5e5e5;
+   }
+   @media screen and (min-width: 1024px) {
+       #generic-tabs li {
+           width: 24.2%;
+           margin-bottom: 0;
+       }
+   }
     </style>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
@@ -2285,7 +2336,7 @@
         <div class="col ends-at-two-thirds clr box" id="search-results">
             <div class="breather">
                 <div id="tab-1" class="all-archives-results tab-content selected">
-                    <h3>Showing results from 'all archives'</h3>
+                    <h2 class="inline">Showing results from 'all archives'</h2>
                     <ul id="search-control-panel">
                     <li>1 - 15 of 2,246 <span class="not-at-smaller">results</span></li>
                     <li id="sort-form">

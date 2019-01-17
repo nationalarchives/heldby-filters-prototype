@@ -1,0 +1,24 @@
+.component {
+    text-align: center;
+    margin-left: 0;
+    margin: 1.5em 0;
+    border: 3px solid #ccc;
+    width: 99.5%;
+}
+.component p {
+    margin: 15px;
+}
+.component a {
+    font-size: 1.1em;
+    padding-left: 0;
+    background: none;
+    display: inline-block;
+}
+
+@media (min-width:768px) {
+    .component a {
+        background: transparent url('book-icon.png') no-repeat;
+        background-size: 45px;
+        padding: 10px 0 13px 65px;
+    }
+}

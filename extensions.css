@@ -9,5 +9,5 @@
     margin: 15px;
 }
 .border-box a:hover {
-    text-decoration: underline;
+    text-decoration: underline !important;
 }

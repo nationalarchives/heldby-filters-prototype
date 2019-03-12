@@ -1,0 +1,77 @@
+.home #page-controls ul {
+    background: none !important;
+}
+.home #page-controls ul li a {
+    color: #666;
+}
+.home #breadcrumb ul {
+    background: none;
+    color: #666;
+}
+.home #breadcrumb ul a {
+    color: #666;
+}
+h1 {
+    color: #405482;
+    font-size: 1.6em;
+}
+.home-box   {
+    background-color: #e3e3e3;
+    display: block;
+    padding: 20px 30px;
+    color: #333;
+}
+.home-box span {
+    display: inline-block;
+}
+.home-box input[type=text] {
+    margin-right: 10px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    padding: 5px 10px;
+}
+.home-box select {
+    box-sizing: content-box;
+    text-indent: 5px;
+    margin-bottom: 30px;
+    padding: 5px 10px;
+}
+.home-box ::placeholder {
+    color: #999;
+}
+.small {
+    width: 70px;
+}
+
+.medium {
+    width: 127px;
+}
+
+.large {
+    width: 310px;
+}
+.home-box label {
+    display: inline-block;
+    font-size: 1em;
+    margin-right: 10px;
+}
+.home-box input[type=submit] {
+    display: block;
+}
+.home-box .smaller {
+    margin-top: 35px;
+    text-align: center;
+}
+.field-spacer {
+    display: block;
+}
+home-box span {
+    display: inline-block;
+}
+
+@media only screen and (min-width: 768px) {
+    .home-box .smaller {
+        float: right;
+        margin: 0;
+    }
+}

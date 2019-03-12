@@ -34,8 +34,6 @@ h1 {
 .home-box select {
     display: block;
     box-sizing: content-box;
-    height: 33px;
-    max-height: 33px;
     text-indent: 5px;
     margin-bottom: 30px;
 }

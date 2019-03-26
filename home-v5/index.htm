@@ -561,7 +561,8 @@
 
 
     <section>
-        <div class="search-banner" style="background-image: url('./index_files/bg-discovery-INF3-534-1-alt.jpg'); color: rgb(255, 255, 255);">
+        <div class="search-banner"
+             style="background-image: url('./index_files/bg-discovery-INF3-534-1-alt.jpg'); color: rgb(255, 255, 255);">
             <div class="container">
                 <div class="row" id="holds-breadcrumb">
                     <div class="col starts-at-half clr">
@@ -590,9 +591,9 @@
 
             <section class="primary-search-box" role="search">
                 <div class="field-container">
-                        <h1>
-                            Search The National Archives and over 2,500 archives across the UK
-                        </h1>
+                    <h1>
+                        Search The National Archives and over 2,500 archives across the UK
+                    </h1>
                     <div class="search-form-container" role="search">
                         <form method="get" action="https://discovery.nationalarchives.gov.uk/results/r">
                             <div class="errorMessage">
@@ -602,27 +603,41 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div id="main-search-container">
-                                <label for="search-all-collections">Show</label>
-                                <input aria-required="true" id="search-all-collections" name="_q" placeholder="Search everything that contains these terms" required="required" type="text" value="">
+                            <div class="main-search-container">
+                                <div class="field-group full">
+                                    <label class="fixed-width" for="search-all-collections">Show</label>
+                                    <input aria-required="true" id="search-all-collections" name="_q"
+                                           placeholder="Search everything that contains these terms" required="required"
+                                           type="text" value="">
+                                </div>
                             </div>
-                            <div id="main-search-container">
-                                <label for="start-date">Between</label>
-                                <input id="start-date" name="_q" placeholder="YYYY" type="text" value="" class="small">
-                                <label for="end-date">and</label>
-                                <input id="end-date" name="_q" placeholder="YYYY" type="text" value="" class="small">
-                                <label for="held-by">across</label>
-                                <select id="held-by" class="medium">
-                                    <option>all records</option>
-                                    <option>The National Archives only</option>
-                                    <option>other archives only</option>
-                                </select>
+                            <div class="main-search-container">
+                                <div class="field-group half-to-full">
+                                    <div class="field-sub-group">
+                                        <label class="fixed-width" for="start-date">between</label>
+                                        <input id="start-date" name="_q" placeholder="YYYY" type="text" value=""
+                                               class="small">
+                                    </div>
+                                    <div class="field-sub-group">
+                                        <label for="end-date">and</label>
+                                        <input id="end-date" name="_q" placeholder="YYYY" type="text" value=""
+                                               class="small">
+                                    </div>
+                                </div>
+                                <div class="field-group half-to-full">
+                                    <label for="held-by">across</label>
+                                    <select id="held-by" class="medium">
+                                        <option>all records</option>
+                                        <option>The National Archives only</option>
+                                        <option>other archives only</option>
+                                    </select>
+                                </div>
                             </div>
                             <input type="submit" title="Search" value="Search">
+                            <p><a href="https://discovery.nationalarchives.gov.uk/advanced-search">More options</a> or
+                                <a href="https://discovery.nationalarchives.gov.uk/browse">browse</a></p>
                         </form>
                     </div>
-                    <p><a href="https://discovery.nationalarchives.gov.uk/advanced-search">More options</a> or <a href="https://discovery.nationalarchives.gov.uk/browse">browse</a></p>
-                </div>
             </section>
         </div>
 

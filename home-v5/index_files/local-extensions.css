@@ -21,7 +21,7 @@
     display: block;
 }
 .field-container {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 1);
     width: auto;
     margin: 0 auto 40px;
     padding: 20px 20px;
@@ -92,6 +92,10 @@
 .half-to-full {
     width: 100%;
 }
+.home #breadcrumb ul, .home #page-controls ul {
+    background: none;
+}
+
 @media screen and (min-width: 480px) {
     .field-container {
         padding: 20px 40px;
@@ -124,8 +128,10 @@
         min-height: 400px;
     }
     .field-container {
+        background: rgba(0, 0, 0, 0.7);
         width: 70%;
         padding: 40px 70px;
+        border-radius: 15px;
     }
 }
 @media screen and (min-width: 1280px) {

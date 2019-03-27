@@ -43,7 +43,7 @@
     padding-left: .5em;
 }
 .field-container p {
-    margin: 0;
+    margin: 7px 0 0 0;
     font-size: 0.9em;
 }
 .fixed-width {
@@ -71,7 +71,6 @@
 .field-container p {
     display: inline-block;
     float: right !important;
-    margin-right: 70px;
 }
 .field-container p a {
     color: #fce45c;
@@ -121,6 +120,9 @@
     .half-to-full {
         display: inline-block;
         width: 49%;
+    }
+    .field-container p {
+        margin-right: 35px;
     }
 }
 @media screen and (min-width: 1024px) {

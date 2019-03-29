@@ -94,7 +94,21 @@
 .home #breadcrumb ul, .home #page-controls ul {
     background: none;
 }
-
+.primary-search-box .search-form-container input::placeholder, .field-container select {
+    font-size: 0.9em;
+}
+.field-container .emphasis-block {
+    background-color: transparent;
+    display: inline-block;
+    color: #fff;
+    font-size: 1em;
+    border: 0 !important;
+    padding: 0 !important;
+    margin-bottom: 20px;
+}
+input.error {
+    border: 3px solid #CC0D0C;
+}
 @media screen and (min-width: 480px) {
     .field-container {
         padding: 20px 40px;
@@ -121,9 +135,11 @@
         display: inline-block !important;
         margin-bottom: 0;
     }
-
     .field-container p {
         margin-right: 35px;
+    }
+    .primary-search-box .search-form-container input::placeholder, .field-container select {
+        font-size: 1em;
     }
 }
 @media screen and (min-width: 1024px) {
